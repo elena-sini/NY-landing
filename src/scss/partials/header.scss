@@ -14,7 +14,6 @@
    }
 }
 .contacts-header {
-   color: var(--color-dark);
    text-align: center;
    @media (min-width:em(620)) {
       flex: 0 1 50%;
@@ -30,9 +29,6 @@
    // .contacts-header__phone
    &__phone {
       display: inline-block;
-      font-weight: 700;
-      font-size: rem(28);
-      line-height: math.div(34, 28);
       transition: color 0.3s ease 0s;
       @media (any-hover: hover) {
          &:hover {

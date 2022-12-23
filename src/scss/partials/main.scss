@@ -6,3 +6,199 @@
       padding-bottom: percent(490, 640);
    }
 }
+
+.hello {
+   // .hello__container
+   &__container {}
+   // .hello__title
+   &__title {
+      margin-bottom: rem(20);
+      h1 {
+         margin-bottom: rem(20);
+      }
+   }
+   // .hello__text
+   &__text {
+      margin-bottom: rem(40);
+   }
+   // .hello__img-ibg
+   &__img-ibg {
+      padding-bottom: percent(260, 640);
+      margin-bottom: rem(20);
+   }
+   // .hello__link
+   &__link {
+      width: 100%;
+   }
+}
+
+.examples {
+
+   // .examples__container
+   &__container {}
+   // .examples__title
+   &__title {
+      @include adaptiveValue("margin-bottom", 40, 20);
+   }
+   // .examples__images
+   &__images {
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+   }
+   // .examples__img-ibg
+   &__img-ibg {
+      flex: 0 1 33.333%;
+      padding-bottom: percent(304, 640);
+      img {
+         border-radius: rem(20);
+      }
+   }
+}
+.why {
+   // .why__container
+   &__container {}
+   // .why__title
+   &__title {
+      @include adaptiveValue("margin-bottom", 30, 15);
+   }
+   // .why__list
+   &__list {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12);
+      margin-bottom: rem(40);
+   }
+   // .why__item
+   &__item {
+      position: relative;
+      padding-left: rem(20);
+      &::before {
+         content: '';
+         position: absolute;
+         height: rem(5);
+         width: rem(5);
+         background-color: var(--color-main);
+         left: 5px;
+         top: 50%;
+         transform: translate(0px, -50%);
+         border-radius: 50%;
+      }
+   }
+   // .why__images
+   &__images {
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+      margin-bottom: rem(40);
+   }
+   // .why__img-ibg
+   &__img-ibg {
+      flex: 0 1 33.333%;
+      padding-bottom: percent(304, 640);
+      img {
+         border-radius: rem(20);
+      }
+   }
+   // .why__text
+   &__text {
+      margin-bottom: rem(40);
+      p {
+         &:not(:last-child) {
+            margin-bottom: rem(20);
+         }
+      }
+   }
+}
+.cta {
+   text-align: center;
+   // .cta__container
+   &__container {}
+   // .cta__inner
+   &__inner {
+      background: var(--color-theme);
+      border-radius: rem(24);
+      @include adaptiveValue("padding-top", 40, 20);
+      @include adaptiveValue("padding-bottom", 40, 20);
+      @include adaptiveValue("padding-left", 70, 15);
+      @include adaptiveValue("padding-right", 70, 15);
+      text-align: center;
+      color: var(--color-light);
+      margin-bottom: rem(20);
+      box-shadow: var(--box-shadow-2);
+   }
+   // .cta__text
+   &__text {
+      margin-bottom: rem(30);
+   }
+   // .cta__phone
+   &__phone {
+      display: inline-block;
+      @include adaptiveValue("font-size", 36, 24);
+      line-height: 1;
+      position: relative;
+      white-space: nowrap;
+      &::after {
+         content: '';
+         position: absolute;
+         width: 0;
+         height: rem(3);
+         background: var(--color-light);
+         top: 100%;
+         left: 0;
+         transition: all 0.3s ease-in-out 0s;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            &::after {
+               width: 100%;
+            }
+         }
+      }
+   }
+   // .cta__actions
+   &__actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: rem(10);
+      @media (max-width: em(620)) {
+         flex-direction: column;
+         align-items: normal;
+      }
+   }
+   // .cta__link
+   &__link {
+      flex: 0 1 50%;
+      height: rem(68);
+   }
+   // .cta__btn
+   &__btn {
+      flex: 0 1 50%;
+      background: #FFFFFF;
+      border: 1px solid #000000;
+      border-radius: 12px;
+      min-height: rem(68);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: var(--box-shadow-1);
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: var(--color-theme);
+            border: 1px solid var(--color-theme);
+            box-shadow: var(--box-shadow-2);
+            color: var(--color-light);
+         }
+      }
+   }
+   // .cta__unsubscribe
+   &__unsubscribe {
+      display: inline-block;
+      margin-bottom: rem(50);
+      color: var(--color-gray);
+      padding-top: rem(20);
+      text-decoration: underline;
+   }
+}
