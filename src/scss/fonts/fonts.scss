@@ -1,7 +1,14 @@
 @font-face {
-	font-family: icons;
+	font-family: Arial_Regular;
 	font-display: swap;
-	src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+	src: url("../fonts/Arial_Regular.woff2") format("woff2"), url("../fonts/Arial_Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Arial_Bold;
+	font-display: swap;
+	src: url("../fonts/Arial_Bold.woff2") format("woff2"), url("../fonts/Arial_Bold.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }

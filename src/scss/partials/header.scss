@@ -1,21 +1,43 @@
 .header {
-   color: #fff;
-   >svg {
-      fill: white;
+   @include adaptiveValue("padding-top", 60, 20);
+   padding-bottom: rem(10);
+   // .header__container
+   &__container {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: rem(20);
+      @media (max-width: em(620)) {
+         flex-direction: column;
+         align-items: center;
+      }
    }
 }
-.icon-facebook>svg {
-   color: white;
-   fill: white;
-   stroke: white;
-   display: block;
-   height: 200px;
-   width: 300px;
-   use {
-      fill: #fff;
-      color: #fff;
-      stroke: #fff;
-      height: 100%;
-      width: 100%;
+.contacts-header {
+   color: var(--color-dark);
+   text-align: center;
+   @media (min-width:em(620)) {
+      flex: 0 1 50%;
+      text-align: right;
+   }
+
+   // .contacts-header__text
+   &__text {
+      font-size: rem(16);
+      line-height: math.div(24, 16);
+      margin-bottom: em(8, 16);
+   }
+   // .contacts-header__phone
+   &__phone {
+      display: inline-block;
+      font-weight: 700;
+      font-size: rem(28);
+      line-height: math.div(34, 28);
+      transition: color 0.3s ease 0s;
+      @media (any-hover: hover) {
+         &:hover {
+            color: var(--color-theme);
+         }
+      }
    }
 }
