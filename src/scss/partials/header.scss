@@ -1,0 +1,21 @@
+.header {
+   color: #fff;
+   >svg {
+      fill: white;
+   }
+}
+.icon-facebook>svg {
+   color: white;
+   fill: white;
+   stroke: white;
+   display: block;
+   height: 200px;
+   width: 300px;
+   use {
+      fill: #fff;
+      color: #fff;
+      stroke: #fff;
+      height: 100%;
+      width: 100%;
+   }
+}

@@ -1,0 +1,57 @@
+// FONTS
+@mixin font($font_name, $file_name, $weight, $style) {
+   @font-face {
+      font-family: $font_name;
+      font-display: swap;
+      src: url("../fonts/#{$file_name}.woff2") format("woff2"),
+      url("../fonts/#{$file_name}.woff") format("woff");
+      font-weight: #{$weight};
+      font-style: #{$style};
+   }
+}
+//======================================================================================================
+//Percent
+@function percent($px, $from) {
+   $result: math.div($px, $from) * 100%;
+   @return $result;
+}
+//REM
+@function rem($px) {
+   $result: math.div($px, 16)+rem;
+   @return $result;
+}
+//EM
+@function em($px, $current: 16) {
+   $result: math.div($px, $current)+em;
+   @return $result;
+}
+//======================================================================================================
+@mixin transition($prop: map-get($transition, prop),
+   $duration: map-get($transition, duration),
+   $animation: map-get($transition, animation)) {
+   transition: $prop $duration $animation;
+}
+
+//======================================================================================================
+// COLORS
+@function hexToRGB($hex) {
+   @return red($hex),
+   green($hex),
+   blue($hex);
+}
+:root {
+   @each $color in map-keys($colors) {
+      --#{$color}: #{map-get($colors, $color)};
+      --#{$color}--rgb: #{hexToRGB(map-get($colors, $color))};
+   }
+
+   @if variable-exists(colors__dark_mode) {
+      @media (prefers-color-scheme: dark) {
+         @each $color in map-keys($colors__dark_mode) {
+            --#{$color}: #{map-get($colors__dark_mode, $color)};
+            --#{$color}--rgb: #{hexToRGB(map-get($colors__dark_mode, $color))};
+         }
+      }
+   }
+}
+//======================================================================================================
